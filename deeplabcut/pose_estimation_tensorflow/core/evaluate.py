@@ -768,7 +768,7 @@ def evaluate_network(
                 train_pose_cfg = load_config(str(path_train_config))
                 # Load meta data
                 _, trainIndices, testIndices, _ = auxiliaryfunctions.load_metadata(
-                    Path(cfg["project_path"], train_pose_cfg["metadataset"])
+                    Path(cfg["project_path"], train_pose_cfg["metadataset"].replace("\\", "/"))
                 )
 
                 # change batch size, if it was edited during analysis!
